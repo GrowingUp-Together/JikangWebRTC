@@ -1,59 +1,32 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { goto } from "$app/navigation";
+	import BasicButton from "../lib/BasicButton.svelte";
+
+	const goToHome = () => {
+		goto('/home');
+	}
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>webrtc test bed</title>
+	<meta name="description" content="webrtc test app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+	<section style="height: 50vh; display: flex; justify-content:center; align-items: center">
+		<h1 style="text-align: center;">
+			<span class="g-title">
+				<div>WEBRTC</div>
+				<div>TEST BED</div>
+			</span>
+		</h1>
+	</section>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<section style="height: 50vh; display: flex; justify-content:space-around; align-items: center; flex-direction: column">
+		<h2 style="color: rgb(0, 132, 255); font-weight: 800; font-size: 30px">Jikang이 mykang님과 sujung님의 버스를 타면서 만드는 앱</h2>
+		<BasicButton on:click={() => goToHome()} color={"rgb(0, 132, 255)"}>들어가기</BasicButton>
+	</section>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>

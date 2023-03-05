@@ -1,18 +1,10 @@
-<script>
-	import Header from './Header.svelte';
-	import './styles.css';
+<script lang="ts">
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
 </div>
 
 <style>
@@ -20,6 +12,9 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		background-size: cover;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.447), rgba(255,255,255,0.1)), url('../lib/images/global/palmhanni.jpg');
+		opacity: 0.7;
 	}
 
 	main {
@@ -31,23 +26,5 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>
